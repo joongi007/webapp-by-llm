@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위 변환기</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>단위 변환기</h1>
+        <div class="converter">
+            <select id="conversionType">
+                <!-- 옵션은 JavaScript에서 동적으로 생성됨 -->
+            </select>
+            <div class="input-group">
+                <input type="text" id="inputValue" placeholder="값 입력">
+                <select id="inputUnit"></select>
+            </div>
+            <button id="swapUnits">⇅ 단위 교환</button>
+            <div class="input-group">
+                <input type="text" id="outputValue" readonly>
+                <select id="outputUnit"></select>
+            </div>
+        </div>
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

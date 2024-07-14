@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드럼패드</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="normalMode" class="container">
+        <h1>드럼패드</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label for="volume">볼륨:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+            </div>
+            <div class="control-group">
+                <label for="tempo">템포 (BPM):</label>
+                <input type="number" id="tempo" min="60" max="240" value="120">
+            </div>
+        </div>
+        <div class="drumpad">
+            <button class="pad" data-key="q">Q</button>
+            <button class="pad" data-key="w">W</button>
+            <button class="pad" data-key="e">E</button>
+            <button class="pad" data-key="r">R</button>
+            <button class="pad" data-key="t">T</button>
+            <button class="pad" data-key="y">Y</button>
+            <button class="pad" data-key="a">A</button>
+            <button class="pad" data-key="s">S</button>
+            <button class="pad" data-key="d">D</button>
+            <button class="pad" data-key="f">F</button>
+            <button class="pad" data-key="g">G</button>
+            <button class="pad" data-key="h">H</button>
+            <button class="pad" data-key="z">Z</button>
+            <button class="pad" data-key="x">X</button>
+            <button class="pad" data-key="c">C</button>
+            <button class="pad" data-key="v">V</button>
+            <button class="pad" data-key="b">B</button>
+            <button class="pad" data-key="n">N</button>
+        </div>
+        <div class="recording-controls">
+            <button id="recordButton">녹음</button>
+            <button id="stopButton" disabled>정지</button>
+            <button id="playButton" disabled>재생</button>
+            <button id="saveButton" disabled>저장</button>
+        </div>
+        <div class="recorded-patterns">
+            <h2>녹음된 패턴</h2>
+            <ul id="patternList"></ul>
+        </div>
+    </div>
+
+    <div id="sharedMode" class="container" style="display: none;">
+        <h1>공유된 드럼 패턴</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label for="sharedVolume">볼륨:</label>
+                <input type="range" id="sharedVolume" min="0" max="1" step="0.1" value="1">
+            </div>
+        </div>
+        <div class="shared-info">
+            <h2 id="sharedPatternName"></h2>
+            <p>템포: <span id="sharedTempo"></span> BPM</p>
+        </div>
+        <button id="playSharedButton">재생</button>
+        <div class="drumpad">
+            <button class="pad" data-key="q">Q</button>
+            <button class="pad" data-key="w">W</button>
+            <button class="pad" data-key="e">E</button>
+            <button class="pad" data-key="r">R</button>
+            <button class="pad" data-key="t">T</button>
+            <button class="pad" data-key="y">Y</button>
+            <button class="pad" data-key="a">A</button>
+            <button class="pad" data-key="s">S</button>
+            <button class="pad" data-key="d">D</button>
+            <button class="pad" data-key="f">F</button>
+            <button class="pad" data-key="g">G</button>
+            <button class="pad" data-key="h">H</button>
+            <button class="pad" data-key="z">Z</button>
+            <button class="pad" data-key="x">X</button>
+            <button class="pad" data-key="c">C</button>
+            <button class="pad" data-key="v">V</button>
+            <button class="pad" data-key="b">B</button>
+            <button class="pad" data-key="n">N</button>
+        </div>
+        <p>이 화면에서는 공유된 패턴을 들을 수만 있습니다.</p>
+        <a href="index.html" id="backToNormalMode">일반 모드로 돌아가기</a>
+    </div>
+
+    <div id="copyNotification" class="notification" style="display: none;">
+        링크가 클립보드에 복사되었습니다!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* 전체 페이지 스타일 */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #2196F3;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* 네비게이션 스타일 */
+nav {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+nav ul li a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    color: #0D47A1;
+    background-color: #E3F2FD;
+}
+
+/* 중첩된 목차 항목 스타일 */
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul li {
+    margin: 0;
+}
+
+nav ul ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+/* 메인 컨텐츠 스타일 */
+main {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #2196F3;
+    border-bottom: 2px solid #2196F3;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 버튼 스타일 */
+.btn {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1976D2;
+}
+
+/* 입력 필드 스타일 */
+input[type="text"], input[type="number"], select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 결과 표시 영역 스타일 */
+.result-container {
+    background-color: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 0.25rem 0;
+    }
+
+    nav ul ul {
+        position: static;
+        display: block;
+        box-shadow: none;
+        padding-left: 1rem;
+    }
+
+    nav ul ul li a {
+        padding-left: 2rem;
+    }
+}
+
+/* SVG 스타일 */
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 애니메이션 클래스 */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* 수식 섹션 스타일 */
+#equations {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#equations h2 {
+    color: #2196F3;
+    border-bottom: 2px solid #2196F3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 개별 수식 스타일 */
+.equation {
+    background-color: white;
+    border-left: 4px solid #2196F3;
+    padding: 15px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+}
+
+/* MathJax 스타일 커스터마이징 */
+.MathJax {
+    font-size: 1.1em !important;
+}

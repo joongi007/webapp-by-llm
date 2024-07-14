@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대적인 오목 게임</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>오목 게임</h1>
+        <div class="game-container">
+            <!-- 오목판: 14x14 그리드로 15x15 교차점 생성 -->
+            <div id="board" class="board"></div>
+            <div class="controls">
+                <button id="startBtn">게임 시작</button>
+                <button id="resetBtn">리셋</button>
+                <select id="ruleSelect">
+                    <option value="standard">표준 규칙</option>
+                    <option value="renju">렌주 규칙</option>
+                    <option value="freestyle">자유 규칙</option>
+                </select>
+            </div>
+        </div>
+        <div id="gameInfo" class="game-info">
+            <p>현재 차례: <span id="currentPlayer"></span></p>
+            <p>게임 상태: <span id="gameStatus"></span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

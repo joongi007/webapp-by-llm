@@ -1,0 +1,300 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    width: 95%;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drumpad {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.pad {
+    aspect-ratio: 1 / 1;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.pad:hover {
+    filter: brightness(1.1);
+}
+
+.pad:active, .pad.active {
+    transform: scale(0.95);
+    filter: brightness(0.9);
+}
+
+/* 다양한 배경색 지정 (변경 없음) */
+.pad[data-key="q"] { background-color: #FF6B6B; }
+.pad[data-key="w"] { background-color: #4ECDC4; }
+.pad[data-key="e"] { background-color: #45B7D1; }
+.pad[data-key="r"] { background-color: #F7B801; }
+.pad[data-key="t"] { background-color: #9B59B6; }
+.pad[data-key="y"] { background-color: #3498DB; }
+.pad[data-key="a"] { background-color: #E74C3C; }
+.pad[data-key="s"] { background-color: #2ECC71; }
+.pad[data-key="d"] { background-color: #1ABC9C; }
+.pad[data-key="f"] { background-color: #F39C12; }
+.pad[data-key="g"] { background-color: #8E44AD; }
+.pad[data-key="h"] { background-color: #2980B9; }
+.pad[data-key="z"] { background-color: #C0392B; }
+.pad[data-key="x"] { background-color: #27AE60; }
+.pad[data-key="c"] { background-color: #16A085; }
+.pad[data-key="v"] { background-color: #D35400; }
+.pad[data-key="b"] { background-color: #7D3C98; }
+.pad[data-key="n"] { background-color: #2C3E50; }
+
+.recording-controls, #playSharedButton {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.recording-controls button, #playSharedButton {
+    padding: 6px 12px;
+    font-size: 12px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.recording-controls button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.recorded-patterns {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recorded-patterns h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#patternList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#patternList li {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#patternList li:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#patternList li .pattern-name {
+    font-weight: bold;
+    color: #333;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+#patternList li .button-group {
+    display: flex;
+    gap: 6px;
+}
+
+#patternList li button {
+    padding: 6px 12px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#patternList li button.play {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#patternList li button.play:hover {
+    background-color: #45a049;
+}
+
+#patternList li button.share {
+    background-color: #2196F3;
+    color: white;
+}
+
+#patternList li button.share:hover {
+    background-color: #1e88e5;
+}
+
+#patternList li button.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+#patternList li button.delete:hover {
+    background-color: #e53935;
+}
+
+.shared-info {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+#backToNormalMode {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #008CBA;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.notification {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+@media (max-width: 800px) {
+    .drumpad {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .drumpad {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-group {
+        margin-bottom: 8px;
+    }
+
+    .pad {
+        font-size: 12px;
+    }
+
+    .recording-controls {
+        flex-wrap: wrap;
+    }
+
+    .recording-controls button, #playSharedButton {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    #patternList li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #patternList li .pattern-name {
+        margin-bottom: 8px;
+    }
+
+    #patternList li .button-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 400px) {
+    .drumpad {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+}

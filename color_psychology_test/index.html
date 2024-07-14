@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 색채 심리 테스트</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>고급 색채 심리 테스트</h1>
+        <div id="test-area">
+            <p>가장 마음에 드는 색상을 선택해주세요:</p>
+            <div id="color-options"></div>
+            <button id="reset-colors">선택 초기화</button>
+            <button id="submit-colors">제출</button>
+        </div>
+        <div id="result-area" style="display:none;">
+            <h2>당신의 색채 심리 분석 결과</h2>
+            <p id="result-text"></p>
+            <div id="detailed-analysis"></div>
+            <button id="restart-btn">다시 시작</button>
+        </div>
+        <div id="history-area" style="display:none;">
+            <h2>색상 선택 기록</h2>
+            <ul id="history-list"></ul>
+        </div>
+        <div id="mood-tracker" style="display:none;">
+            <h2>무드 트래커</h2>
+            <canvas id="mood-chart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

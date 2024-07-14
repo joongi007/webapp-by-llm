@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단 유전 시뮬레이션</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>간단 유전 시뮬레이션</h1>
+        </header>
+        
+        <main>
+            <div id="controls">
+                <h2>시뮬레이션 설정</h2>
+                <div class="control-group">
+                    <label for="map-size">맵 크기:</label>
+                    <input type="range" id="map-size" min="100" max="1000" value="500">
+                    <span id="map-size-value">500</span>
+                </div>
+                <div class="control-group">
+                    <label for="food-count">먹이 수:</label>
+                    <input type="number" id="food-count" min="1" max="1000" value="100">
+                </div>
+                <div class="control-group">
+                    <label for="species-count">종의 수:</label>
+                    <input type="number" id="species-count" min="1" max="10" value="3">
+                </div>
+                <div class="control-group">
+                    <label for="food-generation-rate">먹이 생성 속도:</label>
+                    <input type="range" id="food-generation-rate" min="0" max="100" value="50">
+                    <span id="food-generation-rate-value">50</span>
+                </div>
+                <button id="start-simulation">시뮬레이션 시작</button>
+                <button id="toggle-sense-range">감지 범위 표시</button>
+                <button id="show-ancestors">후손 강조 표시</button>
+            </div>
+            
+            <div id="simulation-container">
+                <canvas id="simulation-canvas"></canvas>
+                <div id="zoom-controls">
+                    <button id="zoom-in">+</button>
+                    <button id="zoom-out">-</button>
+                </div>
+                <button id="toggle-stats">통계 보기/숨기기</button>
+                <div id="statistics" class="hidden">
+                    <h2>통계 정보</h2>
+                    <p>총 유기체 수: <span id="total-organisms">0</span></p>
+                    <p>초식 동물 수: <span id="herbivore-count">0</span></p>
+                    <p>육식 동물 수: <span id="carnivore-count">0</span></p>
+                    <p>평균 크기: <span id="average-size">0</span></p>
+                    <p>평균 수명: <span id="average-lifespan">0</span></p>
+                    <p>평균 에너지: <span id="average-energy">0</span></p>
+                    <p>총 음식 수: <span id="total-food">0</span></p>
+                </div>
+                <div id="organism-info-container"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 유전 시뮬레이션. All rights reserved.</p>
+        </footer>
+    </div>
+    <div id="ancestor-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>후손 강조 표시</h3>
+            <div id="ancestor-list-container"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

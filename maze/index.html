@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 미로 게임</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>미로 게임</h1>
+        </header>
+        <main>
+            <div id="game-area">
+                <div id="maze-container">
+                    <div id="maze"></div>
+                    <div id="minimap"></div>
+                </div>
+                <div id="game-controls">
+                    <div id="game-info">
+                        <div id="timer" class="info-item">시간: <span>0초</span></div>
+                        <div id="score" class="info-item">점수: <span>0</span></div>
+                        <div id="items" class="info-item">아이템: <span>없음</span></div>
+                    </div>
+                    <div id="virtual-keys" class="hidden">
+                        <button id="up-key" class="arrow-key">↑</button>
+                        <div class="horizontal-keys">
+                            <button id="left-key" class="arrow-key">←</button>
+                            <button id="right-key" class="arrow-key">→</button>
+                        </div>
+                        <button id="down-key" class="arrow-key">↓</button>
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <div class="control-group">
+                    <label for="maze-size">미로 크기:</label>
+                    <select id="maze-size" class="styled-select">
+                        <option value="10">10x10</option>
+                        <option value="15">15x15</option>
+                        <option value="20">20x20</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="difficulty">난이도:</label>
+                    <select id="difficulty" class="styled-select">
+                        <option value="easy">쉬움</option>
+                        <option value="medium">보통</option>
+                        <option value="hard">어려움</option>
+                    </select>
+                </div>
+                <button id="generate-maze" class="styled-button">미로 생성</button>
+                <button id="help-button" class="styled-button">도움말</button>
+            </div>
+            <div id="sound-controls">
+                <label for="volume-slider">볼륨:</label>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+                <button id="mute-button" class="styled-button">음소거</button>
+            </div>
+        </main>
+        <aside id="high-scores">
+            <h3>최고 기록</h3>
+            <ol id="high-scores-list"></ol>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

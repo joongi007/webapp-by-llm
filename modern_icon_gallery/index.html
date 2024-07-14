@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 아이콘 갤러리</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>모던 아이콘 갤러리</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="아이콘 검색...">
+                <button id="search-button">검색</button>
+            </div>
+        </header>
+        <main id="icon-container">
+            <!-- 아이콘들이 여기에 동적으로 추가됩니다 -->
+        </main>
+    </div>
+
+    <!-- 모달 수정 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-icon-name"></h2>
+            <div class="icon-options">
+                <label for="icon-size">크기:</label>
+                <input type="range" id="icon-size" min="16" max="64" value="24">
+                <span id="size-value">24px</span>
+                
+                <label for="icon-color">색상:</label>
+                <input type="color" id="icon-color" value="#000000">
+            </div>
+            <div id="icon-preview"></div>
+            <pre><code id="modal-svg-code"></code></pre>
+            <button id="copy-button">SVG 코드 복사</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

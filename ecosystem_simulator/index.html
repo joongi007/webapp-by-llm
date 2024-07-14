@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 생태계 시뮬레이터</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>가상 생태계 시뮬레이터</h1>
+        </header>
+        <main class="main">
+            <div class="simulator-container">
+                <canvas id="ecosystem-canvas" width="600" height="400"></canvas>
+                <div class="controls">
+                    <div class="control-group">
+                        <button id="start-btn" class="btn btn-primary">시작</button>
+                        <button id="pause-btn" class="btn btn-secondary">일시정지</button>
+                        <button id="reset-btn" class="btn btn-secondary">리셋</button>
+                    </div>
+                    <div class="control-group">
+                        <button id="add-organism" class="btn btn-action">유기체 추가</button>
+                        <button id="remove-organism" class="btn btn-action">유기체 제거</button>
+                    </div>
+                    <div class="control-group">
+                        <div class="slider-container">
+                            <label for="temperature">온도</label>
+                            <input type="range" id="temperature" min="-10" max="40" value="20">
+                            <span id="temperature-value">20°C</span>
+                        </div>
+                        <div class="slider-container">
+                            <label for="sunlight">햇빛</label>
+                            <input type="range" id="sunlight" min="0" max="1" step="0.1" value="0.5">
+                            <span id="sunlight-value">0.5</span>
+                        </div>
+                        <div class="slider-container">
+                            <label for="rainfall">강수량</label>
+                            <input type="range" id="rainfall" min="0" max="1" step="0.1" value="0.5">
+                            <span id="rainfall-value">0.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="statistics-container">
+                <canvas id="population-chart"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

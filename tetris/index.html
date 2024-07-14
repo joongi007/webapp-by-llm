@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 테트리스 게임</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-area">
+            <div id="tetris-board"></div>
+            <div id="game-info">
+                <div class="info-box">
+                    <h2>점수</h2>
+                    <span id="score-value">0</span>
+                </div>
+                <div class="info-box">
+                    <h2>레벨</h2>
+                    <span id="level-value">1</span>
+                </div>
+                <div class="info-box">
+                    <h2>최고 점수</h2>
+                    <span id="high-score-value">0</span>
+                </div>
+                <div id="next-piece-container">
+                    <h2>다음 조각</h2>
+                    <div id="next-piece"></div>
+                </div>
+                <div class="button-group">
+                    <button id="pause-btn" class="game-button">일시정지</button>
+                    <button id="restart-btn" class="game-button">재시작</button>
+                    <button id="help-btn" class="game-button">도움말</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <h2>테트리스 조작법</h2>
+            <ul>
+                <li><span class="key">←</span> 왼쪽으로 이동</li>
+                <li><span class="key">→</span> 오른쪽으로 이동</li>
+                <li><span class="key">↓</span> 아래로 이동</li>
+                <li><span class="key">↑</span> 조각 회전</li>
+                <li><span class="key">Space</span> 즉시 떨어뜨리기</li>
+                <li><span class="key">P</span> 일시정지/재개</li>
+            </ul>
+            <button id="close-help-btn" class="game-button">닫기</button>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>

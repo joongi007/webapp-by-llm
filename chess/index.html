@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체스 웹 앱</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>체스 게임</h1>
+        </header>
+        <main>
+            <div id="game-info">
+                <div id="current-player">현재 차례: 백</div>
+                <div id="game-status">게임 상태: 진행 중</div>
+            </div>
+            <div id="chessboard">
+                <!-- 체스판은 JavaScript로 동적으로 생성될 것입니다 -->
+            </div>
+            <div id="controls">
+                <button id="new-game">새 게임</button>
+                <button id="undo-move">무르기</button>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 체스 웹 앱. All rights reserved.</p>
+        </footer>
+    </div>
+    <div id="promotion-modal" class="modal">
+        <div class="modal-content">
+          <h2>폰 승진</h2>
+          <p>승진시킬 말을 선택하세요:</p>
+          <div id="promotion-choices"></div>
+        </div>
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

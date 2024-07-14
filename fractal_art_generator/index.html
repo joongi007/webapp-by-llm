@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대적인 프랙탈 아트 생성기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>프랙탈 아트 생성기</h1>
+        </header>
+        <main>
+            <div class="controls-container">
+                <div class="control-group">
+                    <label for="fractalType">프랙탈 유형</label>
+                    <select id="fractalType">
+                        <option value="tree">나무</option>
+                        <option value="mandelbrot">만델브로트</option>
+                        <option value="julia">줄리아</option>
+                        <option value="sierpinski">시에르핀스키</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="iterations">반복 횟수</label>
+                    <input type="range" id="iterations" min="1" max="12" value="8">
+                    <span id="iterationsValue">8</span>
+                </div>
+                <div class="control-group">
+                    <label for="startColor">시작 색상</label>
+                    <input type="color" id="startColor" value="#000000">
+                </div>
+                <div class="control-group">
+                    <label for="endColor">끝 색상</label>
+                    <input type="color" id="endColor" value="#ffffff">
+                </div>
+                <div class="control-group">
+                    <label for="branchAngle">가지 각도</label>
+                    <input type="range" id="branchAngle" min="0" max="90" value="30">
+                    <span id="branchAngleValue">30°</span>
+                </div>
+                <div class="control-group">
+                    <label for="branchRatio">가지 비율</label>
+                    <input type="range" id="branchRatio" min="1" max="100" value="70">
+                    <span id="branchRatioValue">70%</span>
+                </div>
+                <div class="control-group">
+                    <label for="preset">프리셋</label>
+                    <select id="preset">
+                        <option value="default">기본</option>
+                        <option value="colorful">컬러풀</option>
+                        <option value="monochrome">모노크롬</option>
+                        <option value="autumn">가을</option>
+                    </select>
+                </div>
+            </div>
+            <div class="canvas-container">
+                <canvas id="fractalCanvas"></canvas>
+            </div>
+            <div class="button-container">
+                <button id="generate" class="btn">생성</button>
+                <button id="random" class="btn">랜덤</button>
+                <button id="animate" class="btn">애니메이션</button>
+                <button id="save" class="btn">저장</button>
+            </div>
+            <div class="share-container">
+                <input type="text" id="shareLink" readonly>
+                <button id="copyLink" class="btn">링크 복사</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소설 웹 앱</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>소설 웹 앱</h1>
+    </header>
+    <main>
+        <div class="sidebar">
+            <section id="novel-list" class="section collapsible">
+                <h2>소설 목록 <button class="toggle-btn">접기/펼치기</button></h2>
+                <div class="content">
+                    <ul id="novel-titles"></ul>
+                </div>
+            </section>
+            <section id="chapter-list" class="section collapsible" style="display: none;">
+                <h2>회차 목록 <button class="toggle-btn">접기/펼치기</button></h2>
+                <div class="content">
+                    <ul id="chapter-titles"></ul>
+                </div>
+            </section>
+            <section id="settings" class="section collapsible">
+                <h2>설정 <button class="toggle-btn">접기/펼치기</button></h2>
+                <div class="content">
+                    <div class="setting-item">
+                        <label for="font-size">글자 크기:</label>
+                        <input type="range" id="font-size" min="12" max="24" value="16">
+                        <div class="setting-value" id="font-size-value">16px</div>
+                    </div>
+                    <div class="setting-item">
+                        <label for="text-color">글자 색상:</label>
+                        <input type="color" id="text-color" value="#000000">
+                        <div class="setting-value" id="text-color-value">#000000</div>
+                    </div>
+                    <div class="setting-item">
+                        <label for="bg-color">배경 색상:</label>
+                        <input type="color" id="bg-color" value="#ffffff">
+                        <div class="setting-value" id="bg-color-value">#ffffff</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="novel-content">
+            <h2 id="current-title"></h2>
+            <div id="content"></div>
+            <div class="chapter-navigation">
+                <button id="prev-chapter">이전 회차</button>
+                <button id="next-chapter">다음 회차</button>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

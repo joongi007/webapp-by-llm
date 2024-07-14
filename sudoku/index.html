@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 스도쿠 게임</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>스도쿠</h1>
+        <div class="game-area">
+            <div class="controls">
+                <div class="control-group">
+                    <select id="difficulty" class="btn">
+                        <option value="easy">쉬움</option>
+                        <option value="medium">보통</option>
+                        <option value="hard">어려움</option>
+                    </select>
+                    <button id="new-game" class="btn"><i class="fas fa-play"></i> 새 게임</button>
+                </div>
+                <div class="control-group">
+                    <button id="hint" class="btn"><i class="fas fa-lightbulb"></i> 힌트 <span id="hint-count">3</span></button>
+                    <button id="memo-mode" class="btn"><i class="fas fa-pencil-alt"></i> 메모</button>
+                    <button id="check-solution" class="btn"><i class="fas fa-check"></i> 확인</button>
+                </div>
+            </div>
+            <div id="sudoku-board"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

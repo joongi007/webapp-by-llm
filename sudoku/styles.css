@@ -1,0 +1,296 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --board-color: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --hover-color: #2980b9;
+    --active-color: #27ae60;
+    --initial-cell-color: #bdc3c7;
+    --editable-cell-color: #ffffff;
+    --selected-cell-color: #e0f7fa;
+    --incorrect-cell-color: #ffcdd2;
+    --hint-color: #f39c12;
+    --hint-cell-color: #fff9c4;
+    --disabled-color: #95a5a6;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.game-area {
+    background-color: var(--board-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.control-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1px;
+    background-color: var(--border-color);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cell {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--board-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #e8f5fe;
+}
+
+.cell.initial {
+    background-color: var(--initial-cell-color);
+}
+
+.cell.editable {
+    background-color: var(--editable-cell-color);
+    cursor: pointer;
+}
+
+.cell.editable:hover {
+    background-color: var(--selected-cell-color);
+}
+
+.cell.selected {
+    background-color: var(--selected-cell-color);
+}
+
+.cell.incorrect {
+    background-color: var(--incorrect-cell-color);
+}
+
+.cell.incorrect.selected {
+    background-color: var(--selected-cell-color);
+}
+
+.cell:nth-child(3n) {
+    border-right: 2px solid var(--text-color);
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid var(--text-color);
+}
+
+#difficulty {
+    background-color: white;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+#difficulty:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.btn, #difficulty {
+    font-size: 14px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+.btn i {
+    font-size: 1rem;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+#check-solution {
+    background-color: var(--secondary-color);
+}
+
+#check-solution:hover {
+    background-color: #27ae60;
+}
+
+.hint-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#hint-count {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--hint-color);
+    background-color: var(--board-color);
+    border: 2px solid var(--hint-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hint {
+    background-color: var(--hint-color);
+    color: white;
+}
+
+#hint:hover {
+    background-color: #e67e22;
+}
+
+.cell.hint {
+    background-color: var(--hint-cell-color);
+}
+
+.cell.user-input {
+    background-color: #e8f5e9; /* 사용자가 입력한 셀의 배경색 */
+}
+
+.cell.user-input.selected {
+    background-color: var(--selected-cell-color);
+}
+
+.btn:disabled {
+    background-color: var(--disabled-color);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn:disabled:hover {
+    background-color: var(--disabled-color);
+}
+
+.cell.invalid {
+    background-color: #ffcdd2; /* 유효하지 않은 입력의 배경색 */
+    color: #d32f2f; /* 유효하지 않은 입력의 텍스트 색상 */
+}
+.cell.invalid.selected {
+    background-color: var(--selected-cell-color);
+}
+
+.cell.user-input {
+    background-color: #e8f5e9; /* 사용자가 입력한 셀의 배경색 */
+}
+
+.cell.user-input.invalid {
+    background-color: #ffcdd2; /* 유효하지 않은 사용자 입력의 배경색 */
+}
+.cell.user-input.invalid.selected {
+    background-color: var(--selected-cell-color);
+}
+
+/* 유효하지 않은 입력에 대한 애니메이션 효과 */
+@keyframes invalidShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.cell.invalid {
+    animation: invalidShake 0.4s ease-in-out;
+}
+
+.memo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    font-size: 0.6rem;
+    color: #666;
+}
+
+.memo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#memo-mode.active {
+    background-color: var(--active-color);
+}
+
+#memo-mode.active:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .control-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

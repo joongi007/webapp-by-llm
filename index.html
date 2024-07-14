@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM 딸깍 웹 앱 모음</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LLM 딸깍 웹 앱 모음</h1>
+        <p>여기 있는 모든 웹 앱은 LLM을 통해(만 사용)하여 만들어 졌습니다.</p>
+    </header>
+    
+    <main id="app-gallery">
+        <!-- 웹 앱 카드들이 여기에 동적으로 추가될 것입니다 -->
+    </main>
+
+    <template id="app-card-template">
+        <div class="app-card">
+            <div class="app-image-container">
+                <div class="loading-spinner"></div>
+                <img data-src="" alt="" class="app-image lazy">
+            </div>
+            <h2 class="app-title"></h2>
+            <p class="app-summary"></p>
+            <div class="app-tags"></div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
