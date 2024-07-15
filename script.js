@@ -7,14 +7,14 @@
                 folder: "ecosystem_simulator",
                 summary: "가상 생태계 시뮬레이션 웹 앱",
                 image: "ecosystem_simulator/example.png",
-                tags: ["claude 3.5 sonnet"]
+                tags: ["claude 3.5 sonnet", "only desktop"]
             },
             {
                 title: "프랙탈 아트",
                 folder: "fractal_art_generator",
                 summary: "프랙탈 아트 생성기 웹 앱",
                 image: "fractal_art_generator/example.png",
-                tags: ["claude 3.5 sonnet"]
+                tags: ["claude 3.5 sonnet", "only desktop"]
             },
             {
                 title: "색체 심리 테스트",
@@ -63,14 +63,14 @@
                 folder: "tetris",
                 summary: "테트리스 웹 앱",
                 image: "tetris/example.png",
-                tags: ["claude 3.5 sonnet"]
+                tags: ["claude 3.5 sonnet", "only desktop"]
             },
             {
                 title: "간단한 뱀파이어 서바이버스 라이크",
                 folder: "simple_vampire_survivors_like",
                 summary: "간단한 뱀파이어 서바이버스 라이크 웹 앱",
                 image: "simple_vampire_survivors_like/example.png",
-                tags: ["claude 3.5 sonnet"]
+                tags: ["claude 3.5 sonnet", "only desktop"]
             },
             {
                 title: "오목",
@@ -91,7 +91,7 @@
                 folder: "sudoku",
                 summary: "스도쿠 웹 앱",
                 image: "sudoku/example.png",
-                tags: ["claude 3.5 sonnet"]
+                tags: ["claude 3.5 sonnet", "only desktop"]
             },
             {
                 title: "모던 아이콘 갤러리",
@@ -105,14 +105,14 @@
                 folder: "rubiks_cube",
                 summary: "루빅스 큐브 시뮬레이션",
                 image: "rubiks_cube/example.png",
-                tags: ["claude 3.5 sonnet"]
+                tags: ["claude 3.5 sonnet", "only desktop"]
             },
             {
                 title: "간단 유전 시뮬레이션",
                 folder: "simple_dielectric_simulation",
                 summary: "간단히 즐길 수 있는 유전 시뮬레이션",
                 image: "simple_dielectric_simulation/example.png",
-                tags: ["claude 3.5 sonnet"]
+                tags: ["claude 3.5 sonnet", "only desktop"]
             },
             {
                 title: "체스 게임",
