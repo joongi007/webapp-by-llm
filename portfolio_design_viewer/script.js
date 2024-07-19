@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewPageBtn = document.getElementById('view-page-btn');
     const viewSourceBtn = document.getElementById('view-source-btn');
 
-    const baseGitHubUrl = 'https://github.com/joongi007/webapp-by-llm/tree/main/portfolio_design_viewer/designs/';
+    const baseGitHubUrl = 'https://github.com/joongi007/webapp-by-llm/tree/master/portfolio_design_viewer/designs/';
 
     // 디자인 목록 (실제 프로젝트에서는 이 부분을 동적으로 생성하거나 서버에서 가져올 수 있습니다)
     const designs = [
