@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음악 프로듀서 포트폴리오 - 김비트</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">KB</div>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li><a href="#tracks">트랙</a></li>
+                <li><a href="#studio">스튜디오</a></li>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>김비트</h1>
+            <h2>음악 프로듀서 / 사운드 디자이너</h2>
+            <div id="audio-visualizer"></div>
+        </section>
+
+        <section id="tracks">
+            <h2>주요 트랙</h2>
+            <div id="track-list"></div>
+        </section>
+
+        <section id="studio">
+            <h2>가상 스튜디오</h2>
+            <div id="mixing-console">
+                <div id="tracks-mixer"></div>
+                <div id="effects-panel"></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>프로듀서 소개</h2>
+            <p>안녕하세요, 저는 다양한 장르를 넘나드는 음악 프로듀서 김비트입니다. 일렉트로닉에서 힙합, 재즈에 이르기까지 폭넓은 음악적 스펙트럼을 가지고 있습니다.</p>
+            <div id="skills">
+                <h3>주요 스킬</h3>
+                <ul id="skill-list"></ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>연락처</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="이름" required>
+                <input type="email" name="email" placeholder="이메일" required>
+                <textarea name="message" placeholder="메시지" required></textarea>
+                <button type="submit">전송</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 김비트. All rights reserved.</p>
+    </footer>
+
+    <div id="audio-player">
+        <div id="now-playing"></div>
+        <div id="player-controls">
+            <button id="prev-track">이전</button>
+            <button id="play-pause">재생</button>
+            <button id="next-track">다음</button>
+        </div>
+        <div id="progress-bar"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

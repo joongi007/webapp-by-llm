@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김블로그의 개인 블로그</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">김블로그</div>
+            <ul class="nav-links">
+                <li><a href="#home">홈</a></li>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#blog">블로그</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>안녕하세요, 김블로그입니다</h1>
+            <p>개발자의 일상과 기술 이야기를 공유합니다</p>
+        </section>
+
+        <section id="about">
+            <h2>소개</h2>
+            <div class="about-content">
+                <img src="../../images/profile.png" alt="프로필 사진" class="profile-img">
+                <p>안녕하세요, 5년차 웹 개발자 김블로그입니다. 프론트엔드 기술과 사용자 경험에 관심이 많으며, 이 블로그를 통해 제 경험과 지식을 공유하고 있습니다. 새로운 기술을 배우고 적용하는 것을 좋아하며, 개발자 커뮤니티에 기여하는 것을 즐깁니다.</p>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>최근 글</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="../../images/blog1.png" alt="블로그 이미지 1">
+                    <div class="blog-content">
+                        <h3>React 18의 새로운 기능들</h3>
+                        <p>React 18에서 추가된 주요 기능들과 그 사용법에 대해 알아봅니다.</p>
+                        <a href="#" class="read-more">더 읽기</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="../../images/blog2.png" alt="블로그 이미지 2">
+                    <div class="blog-content">
+                        <h3>효과적인 코드 리뷰 방법</h3>
+                        <p>팀의 코드 품질을 높이는 효과적인 코드 리뷰 방법에 대해 소개합니다.</p>
+                        <a href="#" class="read-more">더 읽기</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="../../images/blog3.png" alt="블로그 이미지 3">
+                    <div class="blog-content">
+                        <h3>JavaScript 비동기 프로그래밍</h3>
+                        <p>Promise와 async/await를 활용한 효율적인 비동기 프로그래밍 기법을 알아봅니다.</p>
+                        <a href="#" class="read-more">더 읽기</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>연락하기</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="이름" required>
+                <input type="email" placeholder="이메일" required>
+                <textarea placeholder="메시지" required></textarea>
+                <button type="submit">보내기</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 김블로그의 개인 블로그. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

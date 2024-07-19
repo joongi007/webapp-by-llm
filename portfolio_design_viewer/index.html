@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 디자인 뷰어</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-cube"></i>
+                <span>Portfolio Viewer</span>
+            </div>
+            <nav>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button id="fullscreen-btn"><i class="fas fa-expand"></i></button>
+            </nav>
+        </header>
+
+        <main>
+            <aside id="sidebar">
+                <h2>디자인 목록</h2>
+                <div id="design-list"></div>
+            </aside>
+            <section id="content">
+                <div id="viewer-header">
+                    <h1 id="current-design">선택된 디자인: <span></span></h1>
+                    <div class="action-buttons">
+                        <button id="view-page-btn">페이지 보기</button>
+                        <button id="view-source-btn">소스 보기</button>
+                    </div>
+                </div>
+                <div id="design-viewer">
+                    <iframe id="design-frame"></iframe>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

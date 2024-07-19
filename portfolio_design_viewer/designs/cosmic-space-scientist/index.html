@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우주 과학자 포트폴리오 - 김우주</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="universe">
+        <nav>
+            <div class="nav-item" data-section="home">홈</div>
+            <div class="nav-item" data-section="research">연구</div>
+            <div class="nav-item" data-section="publications">출판</div>
+            <div class="nav-item" data-section="contact">연락처</div>
+        </nav>
+        <div id="content">
+            <section id="home" class="active">
+                <h1>김우주</h1>
+                <h2>우주 과학자 / 천문학자</h2>
+                <p>미지의 우주를 탐험하고 그 비밀을 풀어내는 여정에 오신 것을 환영합니다.</p>
+            </section>
+            <section id="research">
+                <h2>연구 분야</h2>
+                <div id="research-topics">
+                    <!-- JavaScript로 동적 생성 -->
+                </div>
+                <div id="research-visualization"></div>
+            </section>
+            <section id="publications">
+                <h2>주요 출판</h2>
+                <div id="publication-list">
+                    <!-- JavaScript로 동적 생성 -->
+                </div>
+            </section>
+            <section id="contact">
+                <h2>연락처</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="이름" required>
+                    <input type="email" name="email" placeholder="이메일" required>
+                    <textarea name="message" placeholder="메시지" required></textarea>
+                    <button type="submit">전송</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <div id="star-map"></div>
+    <div id="data-overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>

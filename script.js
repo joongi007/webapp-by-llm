@@ -3,6 +3,13 @@
         // 웹 앱 정보를 담은 배열
         const webApps = [
             {
+                title: "포트폴리오 디자인 템플릿",
+                folder: "portfolio_design_viewer",
+                summary: "포트폴리오 디자인 템플릿 게시 웹 앱",
+                image: "portfolio_design_viewer/example.png",
+                tags: ["claude 3.5 sonnet", "only desktop"]
+            },
+            {
                 title: "생태계 시뮬레이션",
                 folder: "ecosystem_simulator",
                 summary: "가상 생태계 시뮬레이션 웹 앱",

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환경 과학자 포트폴리오 - 이나무</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="ecosystem">
+        <div id="terrain"></div>
+        <div id="weather-effects"></div>
+        <div id="flora"></div>
+        <div id="fauna"></div>
+    </div>
+    <nav id="eco-nav">
+        <div class="nav-item" data-section="about">소개</div>
+        <div class="nav-item" data-section="research">연구</div>
+        <div class="nav-item" data-section="projects">프로젝트</div>
+        <div class="nav-item" data-section="contact">연락처</div>
+    </nav>
+    <main id="content">
+        <section id="about" class="eco-section">
+            <h1>이나무</h1>
+            <h2>환경 과학자 / 생태학자</h2>
+            <p>지속 가능한 미래를 위해 생태계의 균형을 연구하고 보존하는 일에 헌신하고 있습니다.</p>
+        </section>
+        <section id="research" class="eco-section">
+            <h2>연구 분야</h2>
+            <div id="research-topics"></div>
+            <div id="eco-data-viz"></div>
+        </section>
+        <section id="projects" class="eco-section">
+            <h2>주요 프로젝트</h2>
+            <div id="project-list"></div>
+        </section>
+        <section id="contact" class="eco-section">
+            <h2>연락처</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="이름" required>
+                <input type="email" name="email" placeholder="이메일" required>
+                <textarea name="message" placeholder="메시지" required></textarea>
+                <button type="submit">전송</button>
+            </form>
+        </section>
+    </main>
+    <div id="eco-controls">
+        <div id="climate-control">
+            <label for="temperature">온도:</label>
+            <input type="range" id="temperature" min="0" max="40" value="20">
+        </div>
+        <div id="precipitation-control">
+            <label for="precipitation">강수량:</label>
+            <input type="range" id="precipitation" min="0" max="100" value="50">
+        </div>
+    </div>
+    <div id="eco-stats"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

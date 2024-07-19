@@ -1,0 +1,129 @@
+:root {
+    --primary-color: #4a4a4a;
+    --secondary-color: #f0f0f0;
+    --accent-color: #ff6b6b;
+    --bg-color: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHjaYvz//z8DJYCJgUIwxAwovV0OFPkPZb+H8vWQ1TDCnKnMye0AtAoX+A9lT0CXZEQPA1LBqAEDaQAjIyMjIyMjTpXEgsf/CYD3+FQxMjIyYoQBJWBgvUApoMgAYMAAN+HuFGvsascAAAAASUVORK5CYII=');
+    image-rendering: pixelated;
+}
+
+#player {
+    width: 32px;
+    height: 32px;
+    background-color: var(--accent-color);
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+.section {
+    position: absolute;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    display: none;
+}
+
+#menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border: 2px solid var(--secondary-color);
+}
+
+h1, h2, h3 {
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 15px;
+}
+
+#inventory {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--secondary-color);
+    padding: 10px;
+}
+
+#collected-items {
+    list-style-type: none;
+}
+
+#dialog-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff8c8c;
+}
+
+#project-showcase, #skill-tree {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-item, .skill-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    cursor: pointer;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 5px;
+    background-color: var(--secondary-color);
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
