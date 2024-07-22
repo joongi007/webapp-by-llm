@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Stable Diffusion Prompt Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Stable Diffusion Prompt Generator</h1>
+        <div class="form-container">
+            <div class="input-group">
+                <label for="subject"><i class="fas fa-image"></i> Subject:</label>
+                <input type="text" id="subject" placeholder="Enter subject (e.g. 'a cat')">
+            </div>
+            <div class="input-group">
+                <label for="style"><i class="fas fa-palette"></i> Style:</label>
+                <select id="style">
+                    <option value="">Select a style</option>
+                    <option value="realistic">Realistic</option>
+                    <option value="cartoon">Cartoon</option>
+                    <option value="abstract">Abstract</option>
+                    <option value="cyberpunk">Cyberpunk</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="impressionist">Impressionist</option>
+                    <option value="surrealist">Surrealist</option>
+                    <option value="pop art">Pop Art</option>
+                    <option value="minimalist">Minimalist</option>
+                    <option value="art nouveau">Art Nouveau</option>
+                    <option value="steampunk">Steampunk</option>
+                    <option value="gothic">Gothic</option>
+                    <option value="retro">Retro</option>
+                    <option value="bauhaus">Bauhaus</option>
+                    <option value="art deco">Art Deco</option>
+                    <option value="futuristic">Futuristic</option>
+                    <option value="psychedelic">Psychedelic</option>
+                    <option value="cubist">Cubist</option>
+                    <option value="baroque">Baroque</option>
+                    <option value="renaissance">Renaissance</option>
+                    <option value="expressionist">Expressionist</option>
+                    <option value="pointillism">Pointillism</option>
+                    <option value="manga">Manga</option>
+                    <option value="graffiti">Graffiti</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="artistStyle"><i class="fas fa-user-artist"></i> Artist Style:</label>
+                <select id="artistStyle">
+                    <option value="">Select an artist style</option>
+                    <option value="Vincent van Gogh">Vincent van Gogh</option>
+                    <option value="Pablo Picasso">Pablo Picasso</option>
+                    <option value="Leonardo da Vinci">Leonardo da Vinci</option>
+                    <option value="Salvador Dali">Salvador Dali</option>
+                    <option value="Frida Kahlo">Frida Kahlo</option>
+                    <option value="Andy Warhol">Andy Warhol</option>
+                    <option value="Claude Monet">Claude Monet</option>
+                    <option value="Gustav Klimt">Gustav Klimt</option>
+                    <option value="Rembrandt">Rembrandt</option>
+                    <option value="Georgia O'Keeffe">Georgia O'Keeffe</option>
+                    <option value="Banksy">Banksy</option>
+                    <option value="Yayoi Kusama">Yayoi Kusama</option>
+                    <option value="Hieronymus Bosch">Hieronymus Bosch</option>
+                    <option value="Wassily Kandinsky">Wassily Kandinsky</option>
+                    <option value="Edvard Munch">Edvard Munch</option>
+                    <option value="Jackson Pollock">Jackson Pollock</option>
+                    <option value="Michelangelo">Michelangelo</option>
+                    <option value="Henri Matisse">Henri Matisse</option>
+                    <option value="Artemisia Gentileschi">Artemisia Gentileschi</option>
+                    <option value="Katsushika Hokusai">Katsushika Hokusai</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="mood"><i class="fas fa-heart"></i> Mood:</label>
+                <select id="mood">
+                    <option value="">Select a mood</option>
+                    <option value="happy">Happy</option>
+                    <option value="sad">Sad</option>
+                    <option value="energetic">Energetic</option>
+                    <option value="calm">Calm</option>
+                    <option value="mysterious">Mysterious</option>
+                    <option value="romantic">Romantic</option>
+                    <option value="eerie">Eerie</option>
+                    <option value="nostalgic">Nostalgic</option>
+                    <option value="whimsical">Whimsical</option>
+                    <option value="serene">Serene</option>
+                    <option value="melancholic">Melancholic</option>
+                    <option value="intense">Intense</option>
+                    <option value="dreamy">Dreamy</option>
+                    <option value="chaotic">Chaotic</option>
+                    <option value="peaceful">Peaceful</option>
+                    <option value="anxious">Anxious</option>
+                    <option value="joyful">Joyful</option>
+                    <option value="somber">Somber</option>
+                    <option value="ethereal">Ethereal</option>
+                    <option value="playful">Playful</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="colorPalette"><i class="fas fa-swatchbook"></i> Color Palette:</label>
+                <select id="colorPalette">
+                    <option value="">Select a color palette</option>
+                    <option value="vibrant">Vibrant</option>
+                    <option value="pastel">Pastel</option>
+                    <option value="monochromatic">Monochromatic</option>
+                    <option value="earthy">Earthy</option>
+                    <option value="neon">Neon</option>
+                    <option value="muted">Muted</option>
+                    <option value="vintage">Vintage</option>
+                    <option value="jewel tones">Jewel Tones</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="sepia">Sepia</option>
+                    <option value="complementary">Complementary</option>
+                    <option value="analogous">Analogous</option>
+                    <option value="warm">Warm</option>
+                    <option value="cool">Cool</option>
+                    <option value="iridescent">Iridescent</option>
+                    <option value="metallic">Metallic</option>
+                    <option value="rainbow">Rainbow</option>
+                    <option value="duotone">Duotone</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="texture"><i class="fas fa-layer-group"></i> Texture:</label>
+                <select id="texture">
+                    <option value="">Select a texture</option>
+                    <option value="smooth">Smooth</option>
+                    <option value="rough">Rough</option>
+                    <option value="grainy">Grainy</option>
+                    <option value="metallic">Metallic</option>
+                    <option value="glossy">Glossy</option>
+                    <option value="matte">Matte</option>
+                    <option value="velvety">Velvety</option>
+                    <option value="wooden">Wooden</option>
+                    <option value="crystalline">Crystalline</option>
+                    <option value="furry">Furry</option>
+                    <option value="liquid">Liquid</option>
+                    <option value="rusty">Rusty</option>
+                    <option value="glass">Glass</option>
+                    <option value="paper">Paper</option>
+                    <option value="leather">Leather</option>
+                    <option value="fabric">Fabric</option>
+                    <option value="stone">Stone</option>
+                    <option value="feathered">Feathered</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="artMedium"><i class="fas fa-paint-brush"></i> Art Medium:</label>
+                <select id="artMedium">
+                    <option value="">Select an art medium</option>
+                    <option value="oil painting">Oil Painting</option>
+                    <option value="watercolor">Watercolor</option>
+                    <option value="digital art">Digital Art</option>
+                    <option value="pencil sketch">Pencil Sketch</option>
+                    <option value="photograph">Photograph</option>
+                    <option value="sculpture">Sculpture</option>
+                    <option value="charcoal drawing">Charcoal Drawing</option>
+                    <option value="pastel">Pastel</option>
+                    <option value="acrylic">Acrylic</option>
+                    <option value="ink drawing">Ink Drawing</option>
+                    <option value="collage">Collage</option>
+                    <option value="mosaic">Mosaic</option>
+                    <option value="gouache">Gouache</option>
+                    <option value="linocut print">Linocut Print</option>
+                    <option value="3D render">3D Render</option>
+                    <option value="etching">Etching</option>
+                    <option value="stained glass">Stained Glass</option>
+                    <option value="crayon">Crayon</option>
+                    <option value="spray paint">Spray Paint</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="lighting"><i class="fas fa-lightbulb"></i> Lighting:</label>
+                <select id="lighting">
+                    <option value="">Select lighting</option>
+                    <option value="natural light">Natural Light</option>
+                    <option value="studio lighting">Studio Lighting</option>
+                    <option value="candlelight">Candlelight</option>
+                    <option value="neon">Neon</option>
+                    <option value="moonlight">Moonlight</option>
+                    <option value="golden hour">Golden Hour</option>
+                    <option value="backlit">Backlit</option>
+                    <option value="dramatic shadows">Dramatic Shadows</option>
+                    <option value="soft glow">Soft Glow</option>
+                    <option value="harsh sunlight">Harsh Sunlight</option>
+                    <option value="fluorescent">Fluorescent</option>
+                    <option value="spotlight">Spotlight</option>
+                    <option value="firelight">Firelight</option>
+                    <option value="bioluminescent">Bioluminescent</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="composition"><i class="fas fa-crop"></i> Composition:</label>
+                <select id="composition">
+                    <option value="">Select composition</option>
+                    <option value="close-up">Close-up</option>
+                    <option value="wide shot">Wide Shot</option>
+                    <option value="panoramic">Panoramic</option>
+                    <option value="birds-eye view">Bird's-eye View</option>
+                    <option value="rule of thirds">Rule of Thirds</option>
+                    <option value="symmetrical">Symmetrical</option>
+                    <option value="asymmetrical">Asymmetrical</option>
+                    <option value="diagonal">Diagonal</option>
+                    <option value="frame within a frame">Frame Within a Frame</option>
+                    <option value="leading lines">Leading Lines</option>
+                    <option value="golden ratio">Golden Ratio</option>
+                    <option value="minimalist">Minimalist</option>
+                    <option value="macro">Macro</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="perspective"><i class="fas fa-cube"></i> Perspective:</label>
+                <select id="perspective">
+                    <option value="">Select perspective</option>
+                    <option value="one-point">One-Point Perspective</option>
+                    <option value="two-point">Two-Point Perspective</option>
+                    <option value="three-point">Three-Point Perspective</option>
+                    <option value="isometric">Isometric</option>
+                    <option value="worm's eye view">Worm's Eye View</option>
+                    <option value="bird's eye view">Bird's Eye View</option>
+                    <option value="fisheye">Fisheye</option>
+                    <option value="forced perspective">Forced Perspective</option>
+                    <option value="atmospheric perspective">Atmospheric Perspective</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="timePeriod"><i class="fas fa-clock"></i> Time Period:</label>
+                <select id="timePeriod">
+                    <option value="">Select a time period</option>
+                    <option value="prehistoric">Prehistoric</option>
+                    <option value="ancient">Ancient</option>
+                    <option value="medieval">Medieval</option>
+                    <option value="renaissance">Renaissance</option>
+                    <option value="baroque">Baroque</option>
+                    <option value="industrial revolution">Industrial Revolution</option>
+                    <option value="victorian">Victorian</option>
+                    <option value="art nouveau">Art Nouveau</option>
+                    <option value="1920s">1920s</option>
+                    <option value="1950s">1950s</option>
+                    <option value="1980s">1980s</option>
+                    <option value="modern">Modern</option>
+                    <option value="contemporary">Contemporary</option>
+                    <option value="futuristic">Futuristic</option>
+                    <option value="post-apocalyptic">Post-Apocalyptic</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="environment"><i class="fas fa-tree"></i> Environment:</label>
+                <select id="environment">
+                    <option value="">Select an environment</option>
+                    <option value="urban">Urban</option>
+                    <option value="rural">Rural</option>
+                    <option value="forest">Forest</option>
+                    <option value="desert">Desert</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="mountain">Mountain</option>
+                    <option value="space">Space</option>
+                    <option value="underwater">Underwater</option>
+                    <option value="jungle">Jungle</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="volcanic">Volcanic</option>
+                    <option value="cyberpunk city">Cyberpunk City</option>
+                    <option value="fantasy realm">Fantasy Realm</option>
+                    <option value="post-apocalyptic wasteland">Post-Apocalyptic Wasteland</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="weather"><i class="fas fa-cloud-sun"></i> Weather:</label>
+                <select id="weather">
+                    <option value="">Select weather</option>
+                    <option value="sunny">Sunny</option>
+                    <option value="rainy">Rainy</option>
+                    <option value="stormy">Stormy</option>
+                    <option value="snowy">Snowy</option>
+                    <option value="foggy">Foggy</option>
+                    <option value="windy">Windy</option>
+                    <option value="cloudy">Cloudy</option>
+                    <option value="rainbow">Rainbow</option>
+                    <option value="aurora borealis">Aurora Borealis</option>
+                    <option value="heatwave">Heatwave</option>
+                    <option value="tornado">Tornado</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="specialEffects"><i class="fas fa-magic"></i> Special Effects:</label>
+                <select id="specialEffects">
+                    <option value="">Select special effects</option>
+                    <option value="glowing">Glowing</option>
+                    <option value="ethereal">Ethereal</option>
+                    <option value="holographic">Holographic</option>
+                    <option value="neon">Neon</option>
+                    <option value="smoky">Smoky</option>
+                    <option value="double exposure">Double Exposure</option>
+                    <option value="lens flare">Lens Flare</option>
+                    <option value="bokeh">Bokeh</option>
+                    <option value="motion blur">Motion Blur</option>
+                    <option value="particles">Particles</option>
+                    <option value="pixelated">Pixelated</option>
+                    <option value="glitch">Glitch</option>
+                    <option value="vortex">Vortex</option>
+                    <option value="fractals">Fractals</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="complexity"><i class="fas fa-sliders-h"></i> Complexity:</label>
+                <input type="range" id="complexity" min="1" max="10" value="5">
+                <span id="complexityValue">5</span>
+            </div>
+            <div class="input-group">
+                <label for="negativePromptDropdown"><i class="fas fa-ban"></i> Negative Prompt:</label>
+                <div class="custom-dropdown" id="negativePromptDropdown">
+                    <div class="dropdown-header">Select Negative Prompts</div>
+                    <div class="dropdown-options">
+                        <label><input type="checkbox" value="low quality, bad quality"> Low Quality</label>
+                        <label><input type="checkbox" value="blurry, fuzzy, grainy"> Blurry/Grainy</label>
+                        <label><input type="checkbox" value="distorted face, deformed eyes, asymmetrical eyes, crooked nose"> Facial Deformities</label>
+                        <label><input type="checkbox" value="photorealistic, 3D, western style"> Non-Anime Style</label>
+                        <label><input type="checkbox" value="text, watermark, signature, frame, border"> Unwanted Elements</label>
+                        <label><input type="checkbox" value="multiple views, split image, collage"> Multiple Images</label>
+                        <label><input type="checkbox" value="oversized head, chibi style, super deformed"> Exaggerated Style</label>
+                        <label><input type="checkbox" value="ugly, disfigured, mutated"> Unappealing Features</label>
+                        <label><input type="checkbox" value="poorly drawn hands, extra fingers, missing limbs"> Anatomical Errors</label>
+                        <label><input type="checkbox" value="out of frame, cropped, worst quality"> Composition Issues</label>
+                        <label><input type="checkbox" value="nsfw, nudity, sexual content"> NSFW Content</label>
+                        <label><input type="checkbox" value="lowres, jpeg artifacts, compression artifacts"> Technical Issues</label>
+                        <label><input type="checkbox" value="airbrushed, over-saturated, over-sharpened"> Over-processing</label>
+                        <label><input type="checkbox" value="glitch, data moshing, encoding artifacts"> Digital Artifacts</label>
+                        <label><input type="checkbox" value="unnatural lighting, harsh shadows"> Lighting Problems</label>
+                        <label><input type="checkbox" value="amateur, unprofessional"> Amateur Look</label>
+                        <label><input type="checkbox" value="inconsistent style, mixed media"> Style Inconsistencies</label>
+                        <label><input type="checkbox" value="pixelated, pixelization"> Pixelation</label>
+                        <label><input type="checkbox" value="duplicate, repeating elements"> Duplicates</label>
+                        <label><input type="checkbox" value="unnatural colors, neon colors"> Unnatural Colors</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="version"><i class="fas fa-code-branch"></i> Diffusion Version:</label>
+                <select id="version">
+                    <option value="1.4">1.4</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2.0">2.0</option>
+                    <option value="2.1">2.1</option>
+                </select>
+            </div>
+        </div>
+        
+        <button id="generateButton"><i class="fas fa-magic"></i> Generate Prompt</button>
+        <div id="result" class="result-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

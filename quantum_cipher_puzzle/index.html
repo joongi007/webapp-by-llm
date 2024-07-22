@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 양자 암호 퍼즐 게임</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>고급 양자 암호 퍼즐 게임</h1>
+        <div id="difficulty-selector">
+            <label>난이도: </label>
+            <select id="difficulty">
+                <option value="easy">쉬움</option>
+                <option value="medium">보통</option>
+                <option value="hard">어려움</option>
+            </select>
+        </div>
+        <div id="qubits-container"></div>
+        <div id="gates-container">
+            <button id="hadamard">H (Hadamard)</button>
+            <button id="cnot">CNOT</button>
+        </div>
+        <div id="controls">
+            <button id="measure">측정</button>
+            <button id="reset">리셋</button>
+            <button id="hint">힌트</button>
+            <button id="help-button">도움말</button>
+        </div>
+        <div id="message"></div>
+        <div id="score">점수: <span id="score-value">0</span></div>
+        <div id="timer">남은 시간: <span id="time-value">60</span>초</div>
+    </div>
+
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>양자 암호 퍼즐 게임 도움말</h2>
+            <h3>게임 목표</h3>
+            <p>모든 큐비트를 '0' 상태로 만들어 암호를 해독하세요.</p>
+            <h3>게임 방법</h3>
+            <ol>
+                <li>큐비트를 클릭하여 선택합니다.</li>
+                <li>Hadamard(H) 또는 CNOT 게이트를 적용하여 큐비트 상태를 변경합니다.</li>
+                <li>'측정' 버튼을 눌러 결과를 확인합니다.</li>
+                <li>제한 시간 내에 목표를 달성하세요!</li>
+            </ol>
+            <h3>양자 게이트 설명</h3>
+            <ul>
+                <li><strong>Hadamard(H) 게이트:</strong> 큐비트를 중첩 상태로 만듭니다. '0'은 '+'로, '1'은 '-'로 변환됩니다.</li>
+                <li><strong>CNOT 게이트:</strong> 두 큐비트 간 연산을 수행합니다. 제어 큐비트가 '1' 또는 '-' 상태일 때, 목표 큐비트의 상태를 반전시킵니다.</li>
+            </ul>
+            <h3>팁</h3>
+            <p>중첩 상태('+', '-')를 잘 활용하면 여러 경우의 수를 동시에 고려할 수 있습니다!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,6 +3,20 @@
         // 웹 앱 정보를 담은 배열
         const webApps = [
             {
+                title: "양자 암호 퍼즐",
+                folder: "quantum_cipher_puzzle",
+                summary: "양자 암호 퍼즐 게임 웹 앱",
+                image: "quantum_cipher_puzzle/example.png",
+                tags: ["claude 3.5 sonnet"]
+            },
+            {
+                title: "stable diffusion prompt 생성",
+                folder: "stable_diffusion_prompt_generator",
+                summary: "stable diffusion prompt 생성 웹 앱",
+                image: "stable_diffusion_prompt_generator/example.png",
+                tags: ["claude 3.5 sonnet"]
+            },
+            {
                 title: "포트폴리오 디자인 템플릿",
                 folder: "portfolio_design_viewer",
                 summary: "포트폴리오 디자인 템플릿 게시 웹 앱",
