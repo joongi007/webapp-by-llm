@@ -3,6 +3,13 @@
         // 웹 앱 정보를 담은 배열
         const webApps = [
             {
+                title: "전략 정복 게임",
+                folder: "strategic_conquest",
+                summary: "Epic Strategic Conquest Deluxe 웹 게임",
+                image: "strategic_conquest/example.png",
+                tags: ["claude 3.5 sonnet"]
+            },
+            {
                 title: "양자 암호 퍼즐",
                 folder: "quantum_cipher_puzzle",
                 summary: "양자 암호 퍼즐 게임 웹 앱",

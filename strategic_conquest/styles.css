@@ -1,0 +1,216 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+#game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #333;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#left-panel, #right-panel, #center-panel {
+    /* width: 100%; */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#resources {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#resources span {
+    margin: 5px;
+}
+
+#map {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.territory {
+    /* width: 100%; */
+    aspect-ratio: 1;
+    background-color: #ddd;
+    border: 1px solid #999;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.territory.player { background-color: #4CAF50; }
+.territory.enemy { background-color: #f44336; }
+.territory.ally { background-color: #2196F3; }
+.territory.mountain { background-color: #795548; }
+.territory.water { background-color: #03A9F4; }
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover { background-color: #45a049; }
+button:disabled { background-color: #ddd; cursor: not-allowed; }
+
+#messages, #log-list {
+    height: 150px;
+    overflow-y: auto;
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#log-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#log-list li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    align-content: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#toggle-music {
+    position: fixed;
+    bottom: 20px;
+    /* right: 20px; */
+    z-index: 1000;
+}
+
+@media (min-width: 768px) {
+    #game-area {
+        flex-direction: row;
+        flex-wrap: inherit;
+    }
+
+    #left-panel {
+        width: 25%;
+        order: 1;
+    }
+
+    #center-panel {
+        width: 45%;
+        order: 2;
+    }
+
+    #right-panel {
+        width: 25%;
+        order: 3;
+    }
+}
+
+@media (min-width: 1024px) {
+    #center-panel {
+        width: 50%;
+    }
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -141px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 100px;
+    font-size: 17px;
+}
+
+.toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 100px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 100px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 100px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 100px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

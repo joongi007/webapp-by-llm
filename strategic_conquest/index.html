@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Strategic Conquest Deluxe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Epic Strategic Conquest Deluxe</h1>
+        <div id="game-area">
+            <div id="left-panel">
+                <h3>자원</h3>
+                <div id="resources">
+                    <span>금: <span id="gold">200</span></span>
+                    <span>식량: <span id="food">200</span></span>
+                    <span>인구: <span id="population">40</span></span>
+                    <span>군사력: <span id="military">15</span></span>
+                    <span>턴: <span id="turn">1</span>/100</span>
+                </div>
+                <h3>행동</h3>
+                <div id="controls">
+                    <button id="build">건설</button>
+                    <button id="train">훈련</button>
+                    <button id="research">연구</button>
+                    <button id="recruit-hero">영웅 모집 (200 금)</button>
+                    <button id="offer-alliance">동맹 제안 (100 금)</button>
+                    <button id="propose-trade">무역 제안 (50 금)</button>
+                    <button id="end-turn">턴 종료</button>
+                </div>
+            </div>
+            <div id="center-panel">
+                <div id="map"></div>
+                <div id="messages"></div>
+            </div>
+            <div id="right-panel">
+                <div id="log">
+                    <h3>행동 로그</h3>
+                    <ul id="log-list"></ul>
+                </div>
+                <div id="statistics">
+                    <h3>통계</h3>
+                    <canvas id="stats-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    <button id="toggle-music">음악 켜기/끄기</button>
+    <div id="toast" class="toast"></div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
