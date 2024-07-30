@@ -3,6 +3,13 @@
         // 웹 앱 정보를 담은 배열
         const webApps = [
             {
+                title: "메모리 매치 카드 게임",
+                folder: "memory_match_card_game",
+                summary: "메모리 메치 카드 웹 게임",
+                image: "memory_match_card_game/example.png",
+                tags: ["claude 3.5 sonnet"]
+            },
+            {
                 title: "전략 정복 게임",
                 folder: "strategic_conquest",
                 summary: "Epic Strategic Conquest Deluxe 웹 게임",

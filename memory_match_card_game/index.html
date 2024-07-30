@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 메모리 매치 게임</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">모던 메모리 매치</h1>
+        <div class="game-info">
+            <p class="score">점수: <span id="score">0</span></p>
+            <p class="timer">시간: <span id="timer">0</span>초</p>
+            <p class="high-score" id="high-score">최고 점수: 0</p>
+        </div>
+        <div class="game-controls">
+            <button id="start-game" class="btn btn-primary">게임 시작</button>
+            <button id="pause-game" class="btn btn-secondary" disabled>일시정지</button>
+            <select id="difficulty" class="select">
+                <option value="easy">쉬움</option>
+                <option value="medium">보통</option>
+                <option value="hard">어려움</option>
+            </select>
+            <select id="theme" class="select">
+                <option value="animals">동물</option>
+                <option value="fruits">과일</option>
+                <option value="emojis">이모지</option>
+            </select>
+            <button id="mute-toggle" class="btn btn-icon">🔊</button>
+        </div>
+        <div id="game-board" class="game-board"></div>
+    </div>
+    <div id="tutorial" class="tutorial hidden">
+        <h2>게임 방법</h2>
+        <p>1. 카드를 클릭하여 뒤집습니다.</p>
+        <p>2. 두 장의 카드가 같으면 점수를 얻습니다.</p>
+        <p>3. 모든 카드 쌍을 찾으면 게임 종료!</p>
+        <button id="close-tutorial" class="btn btn-secondary">닫기</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
