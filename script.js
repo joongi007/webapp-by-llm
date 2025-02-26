@@ -3,6 +3,13 @@
         // 웹 앱 정보를 담은 배열
         const webApps = [
             {
+                title: "육각형 물리 시뮬레이션",
+                folder: "hexagon_physics_simulator",
+                summary: "육각형 물리 시뮬레이션 웹 게임",
+                image: "hexagon_physics_simulator/example.png",
+                tags: ["claude 3.7 sonnet"]
+            },
+            {
                 title: "메모리 매치 카드 게임",
                 folder: "memory_match_card_game",
                 summary: "메모리 메치 카드 웹 게임",

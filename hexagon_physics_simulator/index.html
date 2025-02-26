@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육각형 물리 시뮬레이션</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+        
+        <div class="controls">
+            <h2>시뮬레이션 제어</h2>
+            
+            <div class="control-group">
+                <label for="rotation-direction">회전 방향:</label>
+                <select id="rotation-direction">
+                    <option value="none">없음</option>
+                    <option value="clockwise">시계 방향</option>
+                    <option value="counterclockwise">반시계 방향</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="rotation-speed">회전 속도:</label>
+                <input type="range" id="rotation-speed" min="0" max="0.05" step="0.001" value="0.01">
+                <span id="rotation-speed-value">0.01</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="ball-count">공의 개수:</label>
+                <input type="range" id="ball-count" min="1" max="10" value="3">
+                <span id="ball-count-value">3</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="gravity-scale">중력 크기:</label>
+                <input type="range" id="gravity-scale" min="0" max="0.002" step="0.0001" value="0.001">
+                <span id="gravity-scale-value">0.001</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="obstacle-count">장애물 개수:</label>
+                <input type="range" id="obstacle-count" min="0" max="6" value="3">
+                <span id="obstacle-count-value">3</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="bounciness">공 탄성:</label>
+                <input type="range" id="bounciness" min="0" max="1" step="0.1" value="0.7">
+                <span id="bounciness-value">0.7</span>
+            </div>
+            
+            <button id="reset-btn">재설정</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
