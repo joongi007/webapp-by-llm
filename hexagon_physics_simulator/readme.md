@@ -1,4 +1,4 @@
-# 체스 게임 웹 앱
+# 육각형 물리 시뮬레이션 웹 앱
 - [claude 3.7 sonnet](https://www.anthropic.com/news/claude-3-7-sonnet)를 사용하여 생성됨.
 ![예제 이미지](example.png)
 -------

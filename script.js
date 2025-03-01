@@ -5,7 +5,7 @@
             {
                 title: "육각형 물리 시뮬레이션",
                 folder: "hexagon_physics_simulator",
-                summary: "육각형 물리 시뮬레이션 웹 게임",
+                summary: "육각형 물리 시뮬레이션 웹 앱",
                 image: "hexagon_physics_simulator/example.png",
                 tags: ["claude 3.7 sonnet"]
             },
