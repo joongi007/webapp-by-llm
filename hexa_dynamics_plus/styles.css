@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #222;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+#canvas {
+  background: #333;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #fff;
+}
+
+#controls {
+  margin: 20px auto;
+  width: 320px;
+  text-align: left;
+}

@@ -3,6 +3,13 @@
         // 웹 앱 정보를 담은 배열
         const webApps = [
             {
+                title: "육각형 공 튕김 시뮬레이션",
+                folder: "hexa_dynamics_plus",
+                summary: "육각형 공 튕김 시뮬레이션 웹 앱",
+                image: "hexa_dynamics_plus/example.png",
+                tags: ["chatgpt o3 mini"]
+            },
+            {
                 title: "육각형 물리 시뮬레이션",
                 folder: "hexagon_physics_simulator",
                 summary: "육각형 물리 시뮬레이션 웹 앱",
