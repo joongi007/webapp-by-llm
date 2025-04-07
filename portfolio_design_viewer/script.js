@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Cosmic Space Scientist',
         'Ecosystem Env Scientist',
         'Audio Music Producer',
-        'Developer Resume'
+        'Developer Resume',
+        'Cover Letter',
     ];
 
     // 디자인 목록을 표시하는 함수

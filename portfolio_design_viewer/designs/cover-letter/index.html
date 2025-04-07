@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개서</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-image">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h1 id="name">자기소개서</h1>
+                    <p id="title"></p>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <section id="about" class="section">
+                <h2>소개</h2>
+                <div id="aboutContent" class="section-content"></div>
+            </section>
+            
+            <section id="coverLetterSections" class="section">
+                <!-- 여기에 자기소개서 항목들이 동적으로 추가됩니다 -->
+            </section>
+        </main>
+        
+        <footer>
+            <p id="contactInfo"></p>
+            <p>© <span id="currentYear"></span> 모든 권리 보유</p>
+        </footer>
+    </div>
+    
+    <script src="coverLetter.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
