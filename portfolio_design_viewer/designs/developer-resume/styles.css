@@ -368,6 +368,31 @@ body {
     color: var(--light-text);
 }
 
+/* 자기소개서 스타일 */
+.cover-letter-item {
+    margin-bottom: 2rem;
+}
+
+.cover-letter-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: var(--secondary-color);
+}
+
+.cover-letter-paragraph {
+    /* margin-bottom: 1rem; */
+    line-height: 1.8;
+}
+
+.cover-letter-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.cover-letter-item:last-child {
+    margin-bottom: 0;
+}
+
 .articles-list {
     list-style: none;
 }

@@ -666,6 +666,45 @@ const renderPortfolio = (data) => {
   return section;
 };
 
+// 자기소개서 렌더링
+const renderCoverLetter = (data) => {
+  const section = document.createElement('section');
+  section.className = 'section';
+
+  const title = document.createElement('h2');
+  title.className = 'section-title';
+  title.textContent = '자기소개서';
+  section.appendChild(title);
+
+  // 각 자기소개서 항목을 렌더링
+  data.forEach(item => {
+    const coverLetterItem = document.createElement('div');
+    coverLetterItem.className = 'cover-letter-item';
+
+    // 항목 제목
+    const itemTitle = document.createElement('h3');
+    itemTitle.className = 'cover-letter-title';
+    itemTitle.textContent = item.title;
+    coverLetterItem.appendChild(itemTitle);
+
+    // 내용을 줄바꿈 유지하면서 렌더링
+    const contentParagraphs = item.content.split(/\n\s*\n/);
+
+    contentParagraphs.forEach(paragraph => {
+      if (paragraph.trim()) {
+        const p = document.createElement('p');
+        p.className = 'cover-letter-paragraph';
+        p.textContent = paragraph;
+        coverLetterItem.appendChild(p);
+      }
+    });
+
+    section.appendChild(coverLetterItem);
+  });
+
+  return section;
+};
+
 // 기사 목록 렌더링
 const renderArticles = (data) => {
   const section = document.createElement('section');
@@ -759,6 +798,9 @@ const renderResume = () => {
         break;
       case 'portfolio':
         resumeContainer.appendChild(renderPortfolio(sectionData));
+        break;
+      case 'coverLetter':
+        resumeContainer.appendChild(renderCoverLetter(sectionData));
         break;
       case 'articles':
         resumeContainer.appendChild(renderArticles(sectionData));
