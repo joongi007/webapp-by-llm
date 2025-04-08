@@ -58,6 +58,19 @@ const utils = {
     } else {
       return `${Math.floor(diffDays / 365)}년 전`;
     }
+  },
+  
+  // 텍스트에서 개행 처리 (일반 함수로 만들어서 여러 곳에서 재사용)
+  renderParagraphs: (container, text, className) => {
+    const paragraphs = text.split(/\n\n/);
+    paragraphs.forEach(paragraph => {
+      if (paragraph.trim()) {
+        const p = document.createElement('p');
+        p.className = className;
+        p.textContent = paragraph.trim();
+        container.appendChild(p);
+      }
+    });
   }
 };
 
@@ -120,6 +133,9 @@ const renderPersonalInfo = (data) => {
 
   infoDiv.appendChild(personalDetails);
 
+  // 전역 설정 확인 (없으면 기본값 사용)
+  const showLinkNames = resumeData.settings?.showLinkNames !== undefined ? resumeData.settings.showLinkNames : true;
+
   // 추가 링크들 (블로그, 깃허브, 기타)
   const contactLinks = document.createElement('div');
   contactLinks.className = 'contact-links';
@@ -130,7 +146,7 @@ const renderPersonalInfo = (data) => {
     blog.className = 'contact-link';
     blog.target = '_blank';
     blog.rel = 'noopener noreferrer';
-    blog.innerHTML = `<i class="fas fa-blog"></i> 블로그`;
+    blog.innerHTML = `<i class="fas fa-blog"></i> ${showLinkNames ? '블로그' : data.blog}`;
     contactLinks.appendChild(blog);
   }
 
@@ -140,7 +156,7 @@ const renderPersonalInfo = (data) => {
     github.className = 'contact-link';
     github.target = '_blank';
     github.rel = 'noopener noreferrer';
-    github.innerHTML = `<i class="fab fa-github"></i> GitHub`;
+    github.innerHTML = `<i class="fab fa-github"></i> ${showLinkNames ? 'GitHub' : data.github}`;
     contactLinks.appendChild(github);
   }
 
@@ -152,7 +168,7 @@ const renderPersonalInfo = (data) => {
       linkElement.className = 'contact-link';
       linkElement.target = '_blank';
       linkElement.rel = 'noopener noreferrer';
-      linkElement.innerHTML = `<i class="${link.icon}"></i> ${link.name}`;
+      linkElement.innerHTML = `<i class="${link.icon}"></i> ${showLinkNames ? link.name : link.url}`;
       contactLinks.appendChild(linkElement);
     });
   }
@@ -181,11 +197,43 @@ const renderIntroduction = (data) => {
   title.textContent = '소개';
   section.appendChild(title);
 
-  const intro = document.createElement('p');
-  intro.className = 'intro-text';
-  intro.textContent = data.text;
-  section.appendChild(intro);
+  // 개행 처리
+  utils.renderParagraphs(section, data.text, 'intro-text');
 
+  return section;
+};
+
+// 핵심역량 렌더링
+const renderCoreCompetencies = (data) => {
+  const section = document.createElement('section');
+  section.className = 'section';
+
+  const title = document.createElement('h2');
+  title.className = 'section-title';
+  title.textContent = '핵심역량';
+  section.appendChild(title);
+
+  const competenciesList = document.createElement('ul');
+  competenciesList.className = 'core-competencies-list';
+
+  data.forEach(competency => {
+    const item = document.createElement('li');
+    item.className = 'core-competency-item';
+
+    const itemTitle = document.createElement('h3');
+    itemTitle.className = 'core-competency-title';
+    itemTitle.textContent = competency.title;
+    item.appendChild(itemTitle);
+
+    // 설명 텍스트에서 개행 처리
+    if (competency.description) {
+      utils.renderParagraphs(item, competency.description, 'core-competency-paragraph');
+    }
+
+    competenciesList.appendChild(item);
+  });
+
+  section.appendChild(competenciesList);
   return section;
 };
 
@@ -305,7 +353,12 @@ const renderExperience = (data) => {
 
         const detailsDiv = document.createElement('div');
         detailsDiv.className = 'responsibility-details';
-        detailsDiv.textContent = resp.details;
+        
+        // 개행 처리
+        if (resp.details) {
+          utils.renderParagraphs(detailsDiv, resp.details, 'responsibility-paragraph');
+        }
+        
         respItem.appendChild(detailsDiv);
 
         respList.appendChild(respItem);
@@ -458,7 +511,8 @@ const renderProjects = (data) => {
     projectItem.appendChild(projectHeader);
 
     const description = document.createElement('div');
-    description.textContent = project.description;
+    // 개행 처리
+    utils.renderParagraphs(description, project.description, 'project-description');
     projectItem.appendChild(description);
 
     projectList.appendChild(projectItem);
@@ -627,9 +681,9 @@ const renderPortfolio = (data) => {
     content.appendChild(itemTitle);
 
     if (item.description) {
-      const description = document.createElement('p');
-      description.className = 'portfolio-description';
-      description.textContent = item.description;
+      const description = document.createElement('div');
+      description.className = 'portfolio-description-container';
+      utils.renderParagraphs(description, item.description, 'portfolio-description');
       content.appendChild(description);
     }
 
@@ -637,13 +691,16 @@ const renderPortfolio = (data) => {
     const links = document.createElement('div');
     links.className = 'portfolio-links';
 
+    // 전역 설정 확인 (없으면 기본값 사용)
+    const showLinkNames = resumeData.settings?.showLinkNames !== undefined ? resumeData.settings.showLinkNames : true;
+
     if (item.codeLink) {
       const codeLink = document.createElement('a');
       codeLink.href = item.codeLink;
       codeLink.className = 'portfolio-link';
       codeLink.target = '_blank';
       codeLink.rel = 'noopener noreferrer';
-      codeLink.innerHTML = `<i class="fab fa-github"></i> 코드 보기`;
+      codeLink.innerHTML = `<i class="fab fa-github"></i> ${showLinkNames ? '코드 보기' : item.codeLink}`;
       links.appendChild(codeLink);
     }
 
@@ -653,7 +710,7 @@ const renderPortfolio = (data) => {
       demoLink.className = 'portfolio-link';
       demoLink.target = '_blank';
       demoLink.rel = 'noopener noreferrer';
-      demoLink.innerHTML = `<i class="fas fa-external-link-alt"></i> 데모 보기`;
+      demoLink.innerHTML = `<i class="fas fa-external-link-alt"></i> ${showLinkNames ? '데모 보기' : item.demoLink}`;
       links.appendChild(demoLink);
     }
 
@@ -663,45 +720,6 @@ const renderPortfolio = (data) => {
   });
 
   section.appendChild(portfolioGrid);
-  return section;
-};
-
-// 자기소개서 렌더링
-const renderCoverLetter = (data) => {
-  const section = document.createElement('section');
-  section.className = 'section';
-
-  const title = document.createElement('h2');
-  title.className = 'section-title';
-  title.textContent = '자기소개서';
-  section.appendChild(title);
-
-  // 각 자기소개서 항목을 렌더링
-  data.forEach(item => {
-    const coverLetterItem = document.createElement('div');
-    coverLetterItem.className = 'cover-letter-item';
-
-    // 항목 제목
-    const itemTitle = document.createElement('h3');
-    itemTitle.className = 'cover-letter-title';
-    itemTitle.textContent = item.title;
-    coverLetterItem.appendChild(itemTitle);
-
-    // 내용을 줄바꿈 유지하면서 렌더링
-    const contentParagraphs = item.content.split(/\n\s*\n/);
-
-    contentParagraphs.forEach(paragraph => {
-      if (paragraph.trim()) {
-        const p = document.createElement('p');
-        p.className = 'cover-letter-paragraph';
-        p.textContent = paragraph;
-        coverLetterItem.appendChild(p);
-      }
-    });
-
-    section.appendChild(coverLetterItem);
-  });
-
   return section;
 };
 
@@ -733,11 +751,14 @@ const renderArticles = (data) => {
     articleItem.appendChild(articleDate);
 
     if (article.summary) {
-      const summary = document.createElement('p');
-      summary.className = 'article-summary';
-      summary.textContent = article.summary;
+      const summary = document.createElement('div');
+      summary.className = 'article-summary-container';
+      utils.renderParagraphs(summary, article.summary, 'article-summary');
       articleItem.appendChild(summary);
     }
+
+    // 전역 설정 확인 (없으면 기본값 사용)
+    const showLinkNames = resumeData.settings?.showLinkNames !== undefined ? resumeData.settings.showLinkNames : true;
 
     if (article.link) {
       const link = document.createElement('a');
@@ -745,7 +766,7 @@ const renderArticles = (data) => {
       link.className = 'article-link';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      link.innerHTML = `<i class="fas fa-external-link-alt"></i> 자세히 보기`;
+      link.innerHTML = `<i class="fas fa-external-link-alt"></i> ${showLinkNames ? '자세히 보기' : article.link}`;
       articleItem.appendChild(link);
     }
 
@@ -753,6 +774,36 @@ const renderArticles = (data) => {
   });
 
   section.appendChild(articlesList);
+  return section;
+};
+
+// 자기소개서 렌더링
+const renderCoverLetter = (data) => {
+  const section = document.createElement('section');
+  section.className = 'section';
+
+  const title = document.createElement('h2');
+  title.className = 'section-title';
+  title.textContent = '자기소개서';
+  section.appendChild(title);
+
+  // 각 자기소개서 항목을 렌더링
+  data.forEach(item => {
+    const coverLetterItem = document.createElement('div');
+    coverLetterItem.className = 'cover-letter-item';
+
+    // 항목 제목
+    const itemTitle = document.createElement('h3');
+    itemTitle.className = 'cover-letter-title';
+    itemTitle.textContent = item.title;
+    coverLetterItem.appendChild(itemTitle);
+
+    // 내용을 줄바꿈 유지하면서 렌더링
+    utils.renderParagraphs(coverLetterItem, item.content, 'cover-letter-paragraph');
+
+    section.appendChild(coverLetterItem);
+  });
+
   return section;
 };
 
@@ -777,6 +828,9 @@ const renderResume = () => {
         break;
       case 'introduction':
         resumeContainer.appendChild(renderIntroduction(sectionData));
+        break;
+      case 'coreCompetencies':
+        resumeContainer.appendChild(renderCoreCompetencies(sectionData));
         break;
       case 'skills':
         resumeContainer.appendChild(renderSkills(sectionData));
