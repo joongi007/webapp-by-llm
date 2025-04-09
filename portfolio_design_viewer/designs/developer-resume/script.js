@@ -433,43 +433,68 @@ const renderProjectDetails = (data) => {
     details.appendChild(periodDd);
 
     // 인력
-    const teamDt = document.createElement('dt');
-    teamDt.textContent = '인력';
-    details.appendChild(teamDt);
-
-    const teamDd = document.createElement('dd');
-    teamDd.textContent = `총 ${project.team.total}명 (${project.team.details})`;
-    details.appendChild(teamDd);
+    if(project.team) {
+      const teamDt = document.createElement('dt');
+      teamDt.textContent = '인력';
+      details.appendChild(teamDt);
+  
+      const teamDd = document.createElement('dd');
+      teamDd.textContent = `총 ${project.team.total}명 (${project.team.details})`;
+      details.appendChild(teamDd);
+    }
 
     // 역할
-    const rolesDt = document.createElement('dt');
-    rolesDt.textContent = '주요 역할';
-    details.appendChild(rolesDt);
-
-    const rolesDd = document.createElement('dd');
-    const rolesUl = document.createElement('ul');
-    project.roles.forEach(role => {
-      const roleLi = document.createElement('li');
-      roleLi.textContent = role;
-      rolesUl.appendChild(roleLi);
-    });
-    rolesDd.appendChild(rolesUl);
-    details.appendChild(rolesDd);
+    if(project.roles) {
+      const rolesDt = document.createElement('dt');
+      rolesDt.textContent = '주요 역할';
+      details.appendChild(rolesDt);
+  
+      const rolesDd = document.createElement('dd');
+      const rolesUl = document.createElement('ul');
+      project.roles.forEach(role => {
+        const roleLi = document.createElement('li');
+        roleLi.textContent = role;
+        rolesUl.appendChild(roleLi);
+      });
+      rolesDd.appendChild(rolesUl);
+      details.appendChild(rolesDd);
+    }
 
     // 성과
-    const achievementsDt = document.createElement('dt');
-    achievementsDt.textContent = '업무 성과';
-    details.appendChild(achievementsDt);
-
-    const achievementsDd = document.createElement('dd');
-    const achievementsUl = document.createElement('ul');
-    project.achievements.forEach(achievement => {
-      const achievementLi = document.createElement('li');
-      achievementLi.textContent = achievement;
-      achievementsUl.appendChild(achievementLi);
-    });
-    achievementsDd.appendChild(achievementsUl);
-    details.appendChild(achievementsDd);
+    if(project.achievements) {
+      const achievementsDt = document.createElement('dt');
+      achievementsDt.textContent = '업무 성과';
+      details.appendChild(achievementsDt);
+  
+      const achievementsDd = document.createElement('dd');
+      const achievementsUl = document.createElement('ul');
+      project.achievements.forEach(achievement => {
+        const achievementLi = document.createElement('li');
+        achievementLi.textContent = achievement;
+        achievementsUl.appendChild(achievementLi);
+      });
+      achievementsDd.appendChild(achievementsUl);
+      details.appendChild(achievementsDd);
+    }
+    
+    // 다른 추가 사항
+    if(project.others) {
+      project.others.forEach((other) => {
+        const achievementsDt = document.createElement('dt');
+        achievementsDt.textContent = other.name;
+        details.appendChild(achievementsDt);
+    
+        const achievementsDd = document.createElement('dd');
+        const achievementsUl = document.createElement('ul');
+        other.items.forEach(achievement => {
+          const achievementLi = document.createElement('li');
+          achievementLi.textContent = achievement;
+          achievementsUl.appendChild(achievementLi);
+        });
+        achievementsDd.appendChild(achievementsUl);
+        details.appendChild(achievementsDd);
+      })
+    }
 
     projectDiv.appendChild(details);
     section.appendChild(projectDiv);
