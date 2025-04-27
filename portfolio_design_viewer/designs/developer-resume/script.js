@@ -33,8 +33,9 @@ const utils = {
 
   // 나이 계산
   calculateAge: (birthYear) => {
+    // TODO : 만나이?
     const currentYear = new Date().getFullYear();
-    return currentYear - birthYear;
+    return currentYear - birthYear + 1;
   },
 
   // 마지막 갱신일로부터 경과 시간 계산
