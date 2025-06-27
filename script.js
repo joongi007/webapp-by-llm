@@ -211,7 +211,11 @@
 
             // 카드 클릭 이벤트 리스너 추가
             card.addEventListener('click', () => {
-                window.location.href = `${app.folder}/index.html`;
+                if(app.folder)
+                    window.location.href = `${app.folder}/index.html`;
+
+                if(app.link)
+                    window.location.href = app.link;
             });
 
             return card;
