@@ -3,6 +3,13 @@
         // 웹 앱 정보를 담은 배열
         const webApps = [
             {
+                title: "웹 마인드맵 도구",
+                link: "https://claude.ai/public/artifacts/8711ab98-55b2-4c04-b235-3c36fea6da01",
+                summary: "간단한 마인드 맵 웹 사이트",
+                image: "images/web_mind_mapping_tool.png",
+                tags: ["claude 4 sonnet"]
+            },
+            {
                 title: "육각형 공 튕김 시뮬레이션",
                 folder: "hexa_dynamics_plus",
                 summary: "육각형 공 튕김 시뮬레이션 웹 앱",
